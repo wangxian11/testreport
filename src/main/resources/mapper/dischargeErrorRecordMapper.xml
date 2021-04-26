@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.testreport.dao.dischargeErrorRecordMapper">
+  <resultMap id="BaseResultMap" type="com.testreport.bean.dischargeErrorRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="identify_box_number" jdbcType="VARCHAR" property="identifyBoxNumber" />
+    <result column="actual_box_number" jdbcType="VARCHAR" property="actualBoxNumber" />
+    <result column="identify_vehicle_number" jdbcType="VARCHAR" property="identifyVehicleNumber" />
+    <result column="actual_vehicle_number" jdbcType="VARCHAR" property="actualVehicleNumber" />
+    <result column="identify_location" jdbcType="VARCHAR" property="identifyLocation" />
+    <result column="actual_location" jdbcType="VARCHAR" property="actualLocation" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="ship_bridge" jdbcType="VARCHAR" property="shipBridge" />
+    <result column="tally_man" jdbcType="VARCHAR" property="tallyMan" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, identify_box_number, actual_box_number, identify_vehicle_number, actual_vehicle_number, 
+    identify_location, actual_location, remarks, ship_bridge, tally_man, create_time
+  </sql>
+  <select id="selectByExample" parameterType="com.testreport.bean.dischargeErrorRecordExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from discharge_error_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from discharge_error_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from discharge_error_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.testreport.bean.dischargeErrorRecordExample">
+    delete from discharge_error_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.testreport.bean.dischargeErrorRecord">
+    insert into discharge_error_record (id, identify_box_number, actual_box_number, 
+      identify_vehicle_number, actual_vehicle_number, 
+      identify_location, actual_location, remarks, 
+      ship_bridge, tally_man, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{identifyBoxNumber,jdbcType=VARCHAR}, #{actualBoxNumber,jdbcType=VARCHAR}, 
+      #{identifyVehicleNumber,jdbcType=VARCHAR}, #{actualVehicleNumber,jdbcType=VARCHAR}, 
+      #{identifyLocation,jdbcType=VARCHAR}, #{actualLocation,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, 
+      #{shipBridge,jdbcType=VARCHAR}, #{tallyMan,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.testreport.bean.dischargeErrorRecord">
+    insert into discharge_error_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="identifyBoxNumber != null">
+        identify_box_number,
+      </if>
+      <if test="actualBoxNumber != null">
+        actual_box_number,
+      </if>
+      <if test="identifyVehicleNumber != null">
+        identify_vehicle_number,
+      </if>
+      <if test="actualVehicleNumber != null">
+        actual_vehicle_number,
+      </if>
+      <if test="identifyLocation != null">
+        identify_location,
+      </if>
+      <if test="actualLocation != null">
+        actual_location,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="shipBridge != null">
+        ship_bridge,
+      </if>
+      <if test="tallyMan != null">
+        tally_man,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="identifyBoxNumber != null">
+        #{identifyBoxNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="actualBoxNumber != null">
+        #{actualBoxNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyVehicleNumber != null">
+        #{identifyVehicleNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="actualVehicleNumber != null">
+        #{actualVehicleNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyLocation != null">
+        #{identifyLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="actualLocation != null">
+        #{actualLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="shipBridge != null">
+        #{shipBridge,jdbcType=VARCHAR},
+      </if>
+      <if test="tallyMan != null">
+        #{tallyMan,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.testreport.bean.dischargeErrorRecordExample" resultType="java.lang.Long">
+    select count(*) from discharge_error_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update discharge_error_record
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.identifyBoxNumber != null">
+        identify_box_number = #{record.identifyBoxNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.actualBoxNumber != null">
+        actual_box_number = #{record.actualBoxNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identifyVehicleNumber != null">
+        identify_vehicle_number = #{record.identifyVehicleNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.actualVehicleNumber != null">
+        actual_vehicle_number = #{record.actualVehicleNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identifyLocation != null">
+        identify_location = #{record.identifyLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.actualLocation != null">
+        actual_location = #{record.actualLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remarks != null">
+        remarks = #{record.remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shipBridge != null">
+        ship_bridge = #{record.shipBridge,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tallyMan != null">
+        tally_man = #{record.tallyMan,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update discharge_error_record
+    set id = #{record.id,jdbcType=INTEGER},
+      identify_box_number = #{record.identifyBoxNumber,jdbcType=VARCHAR},
+      actual_box_number = #{record.actualBoxNumber,jdbcType=VARCHAR},
+      identify_vehicle_number = #{record.identifyVehicleNumber,jdbcType=VARCHAR},
+      actual_vehicle_number = #{record.actualVehicleNumber,jdbcType=VARCHAR},
+      identify_location = #{record.identifyLocation,jdbcType=VARCHAR},
+      actual_location = #{record.actualLocation,jdbcType=VARCHAR},
+      remarks = #{record.remarks,jdbcType=VARCHAR},
+      ship_bridge = #{record.shipBridge,jdbcType=VARCHAR},
+      tally_man = #{record.tallyMan,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.testreport.bean.dischargeErrorRecord">
+    update discharge_error_record
+    <set>
+      <if test="identifyBoxNumber != null">
+        identify_box_number = #{identifyBoxNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="actualBoxNumber != null">
+        actual_box_number = #{actualBoxNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyVehicleNumber != null">
+        identify_vehicle_number = #{identifyVehicleNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="actualVehicleNumber != null">
+        actual_vehicle_number = #{actualVehicleNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyLocation != null">
+        identify_location = #{identifyLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="actualLocation != null">
+        actual_location = #{actualLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="shipBridge != null">
+        ship_bridge = #{shipBridge,jdbcType=VARCHAR},
+      </if>
+      <if test="tallyMan != null">
+        tally_man = #{tallyMan,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.testreport.bean.dischargeErrorRecord">
+    update discharge_error_record
+    set identify_box_number = #{identifyBoxNumber,jdbcType=VARCHAR},
+      actual_box_number = #{actualBoxNumber,jdbcType=VARCHAR},
+      identify_vehicle_number = #{identifyVehicleNumber,jdbcType=VARCHAR},
+      actual_vehicle_number = #{actualVehicleNumber,jdbcType=VARCHAR},
+      identify_location = #{identifyLocation,jdbcType=VARCHAR},
+      actual_location = #{actualLocation,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      ship_bridge = #{shipBridge,jdbcType=VARCHAR},
+      tally_man = #{tallyMan,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
