@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.testreport.dao.dischargeErrorRecordMapper">
-  <resultMap id="BaseResultMap" type="com.testreport.bean.dischargeErrorRecord">
+<mapper namespace="com.testreport.dao.DischargeErrorRecordMapper">
+  <resultMap id="BaseResultMap" type="com.testreport.bean.DischargeErrorRecord">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="identify_box_number" jdbcType="VARCHAR" property="identifyBoxNumber" />
     <result column="actual_box_number" jdbcType="VARCHAR" property="actualBoxNumber" />
@@ -76,7 +76,7 @@
     id, identify_box_number, actual_box_number, identify_vehicle_number, actual_vehicle_number, 
     identify_location, actual_location, remarks, ship_bridge, tally_man, create_time
   </sql>
-  <select id="selectByExample" parameterType="com.testreport.bean.dischargeErrorRecordExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.testreport.bean.DischargeErrorRecordExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -98,15 +98,18 @@
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from discharge_error_record
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER};
+    
+    
+
   </delete>
-  <delete id="deleteByExample" parameterType="com.testreport.bean.dischargeErrorRecordExample">
+  <delete id="deleteByExample" parameterType="com.testreport.bean.DischargeErrorRecordExample">
     delete from discharge_error_record
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.testreport.bean.dischargeErrorRecord">
+  <insert id="insert" parameterType="com.testreport.bean.DischargeErrorRecord">
     insert into discharge_error_record (id, identify_box_number, actual_box_number, 
       identify_vehicle_number, actual_vehicle_number, 
       identify_location, actual_location, remarks, 
@@ -118,7 +121,7 @@
       #{shipBridge,jdbcType=VARCHAR}, #{tallyMan,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.testreport.bean.dischargeErrorRecord">
+  <insert id="insertSelective" parameterType="com.testreport.bean.DischargeErrorRecord">
     insert into discharge_error_record
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -191,12 +194,23 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.testreport.bean.dischargeErrorRecordExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.testreport.bean.DischargeErrorRecordExample" resultType="java.lang.Long">
     select count(*) from discharge_error_record
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+  
+  <update id="fresh1">
+  	ALTER TABLE discharge_error_record DROP id
+  </update>
+  <update id="fresh2">
+  	ALTER TABLE discharge_error_record ADD id int NOT NULL FIRST
+  </update>
+  <update id="fresh3">
+  	ALTER TABLE discharge_error_record MODIFY COLUMN id int NOT NULL AUTO_INCREMENT,ADD PRIMARY KEY(id)
+  </update>
+  
   <update id="updateByExampleSelective" parameterType="map">
     update discharge_error_record
     <set>
@@ -255,7 +269,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.testreport.bean.dischargeErrorRecord">
+  <update id="updateByPrimaryKeySelective" parameterType="com.testreport.bean.DischargeErrorRecord">
     update discharge_error_record
     <set>
       <if test="identifyBoxNumber != null">
@@ -291,7 +305,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.testreport.bean.dischargeErrorRecord">
+  <update id="updateByPrimaryKey" parameterType="com.testreport.bean.DischargeErrorRecord">
     update discharge_error_record
     set identify_box_number = #{identifyBoxNumber,jdbcType=VARCHAR},
       actual_box_number = #{actualBoxNumber,jdbcType=VARCHAR},

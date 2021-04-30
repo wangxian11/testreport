@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/testreport/bean=US-ASCII
+encoding//src/main/java/com/testreport/bean/Msg.java=UTF-8
+encoding//src/main/java/com/testreport/controller=UTF-8
+encoding//src/main/java/com/testreport/controller/DischargeErrorRecordController.java=UTF-8
+encoding//src/main/java/com/testreport/service=GBK
+encoding//src/main/java/com/testreport/service/DischargeErrorRecordService.java=UTF-8
+encoding//src/main/java/com/testreport/service/LoadErrorRecordService.java=UTF-8
+encoding//src/main/java/com/testreport/service/TestReportService.java=UTF-8

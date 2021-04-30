@@ -15,31 +15,88 @@
 </head>
 <body>
 
-<!-- 员工修改的模态框 -->
+<!-- 卸船详细信息修改的模态框 -->
 <div class="modal fade" id="empUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">员工修改</h4>
+        <h4 class="modal-title">卸船详细信息修改</h4>
       </div>
       <div class="modal-body">
       
       	<form class="form-horizontal">
-		  <div class="form-group">
-		    <label class="col-sm-2 control-label">empName</label>
+      		<div class="form-group">
+		    	<label class="col-sm-2 control-label">identifyBoxNumber</label>
+		    	<div class="col-sm-10">
+		      	<input type="text" name="identifyBoxNumber"  class="form-control" id="identifyBoxNumber_update_input" placeholder="identifyBoxNumber">
+		      	<span class="help-block"></span>
+		    	</div>
+		  	</div>
+		  <!-- <div class="form-group">
+		    <label class="col-sm-2 control-label">identifyBoxNumber</label>
 		    <div class="col-sm-10">
-		      <p class="form-control-static" id="empName_update_static"></p>
+		      <p class="form-control-static" id="identifyBoxNumber_update_static"></p>
 		    </div>
-		  </div>
+		  </div> -->
 		  <div class="form-group">
-		    <label class="col-sm-2 control-label">email</label>
+		    <label class="col-sm-2 control-label">actualBoxNumber</label>
 		    <div class="col-sm-10">
-		      <input type="text" name="emial" class="form-control" id="email_update_input" placeholder="email@qq.com">
+		      <input type="text" name="actualBoxNumber"  class="form-control" id="actualBoxNumber_update_input" placeholder="actualBoxNumber">
 		      <span class="help-block"></span>
 		    </div>
 		  </div>
+		  
 		  <div class="form-group">
+		    <label class="col-sm-2 control-label">identifyVehicleNumber</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="identifyVehicleNumber"  class="form-control" id="identifyVehicleNumber_update_input" placeholder="identifyVehicleNumber">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		   <div class="form-group">
+		    <label class="col-sm-2 control-label">actualVehicleNumber</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="actualVehicleNumber"  class="form-control" id="actualVehicleNumber_update_input" placeholder="actualVehicleNumber">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		   <div class="form-group">
+		    <label class="col-sm-2 control-label">identifyLocation</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="identifyLocation"  class="form-control" id="identifyLocation_update_input" placeholder="identifyLocation">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		   <div class="form-group">
+		    <label class="col-sm-2 control-label">actualLocation</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="actualLocation"  class="form-control" id="actualLocation_update_input" placeholder="actualLocation">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		   <div class="form-group">
+		    <label class="col-sm-2 control-label">remarks</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="remarks"  class="form-control" id="remarks_update_input" placeholder="remarks">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		   <div class="form-group">
+		    <label class="col-sm-2 control-label">shipBridge</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="shipBridge"  class="form-control" id="shipBridge_update_input" placeholder="shipBridge">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		   <div class="form-group">
+		    <label class="col-sm-2 control-label">tallyMan</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="tallyMan"  class="form-control" id="tallyMan_update_input" placeholder="tallyMan">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		  <!-- <div class="form-group">
 		    <label class="col-sm-2 control-label">gender</label>
 		    <div class="col-sm-10">
 		      <label class="radio-inline">
@@ -49,14 +106,14 @@
 				  <input type="radio" name="gender" id="gender2_update_input" value="F"> 女
 				</label>
 		    </div>
-		  </div>
-		  <div class="form-group">
+		  </div> -->
+		  <!-- <div class="form-group">
 		    <label class="col-sm-2 control-label">gender</label>
 		    <div class="col-sm-4">
-		      <!-- 部门提交部门Id即可 -->
+		      部门提交部门Id即可
 		      <select class="form-control" name="dId"></select>
 		    </div>
-		   </div>
+		   </div> -->
 		  
 		</form>
       </div>
@@ -69,32 +126,83 @@
 </div>
 
 
-<!-- 员工添加的模态框 -->
+<!-- 卸船详细信息添加的模态框 -->
 <div class="modal fade" id="empAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">员工添加</h4>
+        <h4 class="modal-title" id="myModalLabel">卸船详细信息添加</h4>
       </div>
       <div class="modal-body">
       
       	<form class="form-horizontal">
 		  <div class="form-group">
-		    <label class="col-sm-2 control-label">empName</label>
+		    <label class="col-sm-2 control-label">识别箱号</label>
 		    <div class="col-sm-10">
-		      <input type="text" name="empName" class="form-control" id="empName_add_input" placeholder="empName">
+		      <input type="text" name="identifyBoxNumber" class="form-control" id="empName_add_input" placeholder="identifyBoxNumber">
 		      <span class="help-block"></span>
 		    </div>
 		  </div>
 		  <div class="form-group">
-		    <label class="col-sm-2 control-label">email</label>
+		    <label class="col-sm-2 control-label">实际箱号</label>
 		    <div class="col-sm-10">
-		      <input type="text" name="emial" class="form-control" id="email_add_input" placeholder="email@qq.com">
+		      <input type="text" name="actualBoxNumber" class="form-control" id="email_add_input" placeholder="actualBoxNumber">
 		      <span class="help-block"></span>
 		    </div>
 		  </div>
 		  <div class="form-group">
+		    <label class="col-sm-2 control-label">识别车号</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="identifyVehicleNumber" class="form-control" placeholder="identifyVehicleNumber">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">实际车号</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="actualVehicleNumber" class="form-control" placeholder="actualVehicleNumber">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">识别位置</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="identifyLocation" class="form-control" placeholder="identifyLocation">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">实际位置</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="actualLocation" class="form-control" placeholder="actualLocation">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">备注</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="remarks" class="form-control" placeholder="remarks">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">岸桥</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="shipBridge" class="form-control" placeholder="shipBridge">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">理货员</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="tallyMan" class="form-control" id="tallyMan_add_input" placeholder="tallyMan">
+		      <span class="help-block"></span>
+		    </div>
+		  </div>
+		  
+		 <!--  <div class="form-group">
 		    <label class="col-sm-2 control-label">gender</label>
 		    <div class="col-sm-10">
 		      <label class="radio-inline">
@@ -104,14 +212,14 @@
 				  <input type="radio" name="gender" id="gender2_add_input" value="F"> 女
 				</label>
 		    </div>
-		  </div>
-		  <div class="form-group">
+		  </div> -->
+		  <!-- <div class="form-group">
 		    <label class="col-sm-2 control-label">gender</label>
 		    <div class="col-sm-4">
-		      <!-- 部门提交部门Id即可 -->
+		      部门提交部门Id即可
 		      <select class="form-control" name="dId" id="dept_add_select"></select>
 		    </div>
-		   </div>
+		   </div> -->
 		  
 		</form>
       </div>
@@ -152,7 +260,7 @@
 							<th>实际箱号</th>
 							<th>识别车号</th>
 							<th>实际车号</th>
-							<th>实际车号</th>
+							<th>识别位置</th>
 							<th>实际位置</th>
 							<th>备注</th>
 							<th>岸桥</th>
@@ -189,8 +297,8 @@
 					data:"pn="+pn,
 					type:"GET",
 					success:function(result){
-						console.log(result);
-						//1、解析显示员工信息
+						
+						//1、解析显示信息
 						build_emps_table(result);
 						//2、解析并显示分页信息
 						build_page_info(result);
@@ -199,20 +307,25 @@
 					}
 				});
 			}
-			//构建员工信息
+			//构建信息
 			function build_emps_table(result){
 				//清空table表格
 				$("#emps_tables tbody").empty();
-				var courses = result.extend.pageInfo.list;
-				$.each(courses,function(index,item){
+				var dischargeErrorRecords = result.extend.pageInfo.list;
+				$.each(dischargeErrorRecords,function(index,item){
 					var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
-					var courseIdTd = $("<td></td>").append(item.id);
-					var courseNameTd = $("<td></td>").append(item.identifyBoxNumber);
-					var courseTypeTd = $("<td></td>").append(item.gender=="M"?"必修":"选修");
-					var courseCreditTd = $("<td></td>").append(item.courseCredit);
-					var weeklyTimesTd = $("<td></td>").append(item.weeklyTimes);
-					var weekTd = $("<td></td>").append(item.week);
-					var timeTd = $("<td></td>").append(item.time);
+					var idTd = $("<td></td>").append(item.id);
+					var identifyBoxNumberTd = $("<td></td>").append(item.identifyBoxNumber);
+					/* var courseTypeTd = $("<td></td>").append(item.gender=="M"?"必修":"选修"); */
+					var actualBoxNumberTd = $("<td></td>").append(item.actualBoxNumber);
+					var identifyVehicleNumberTd = $("<td></td>").append(item.identifyVehicleNumber);
+					var actualVehicleNumberTd = $("<td></td>").append(item.actualVehicleNumber);
+					var identifyLocationTd = $("<td></td>").append(item.identifyLocation);
+					var actualLocationTd = $("<td></td>").append(item.actualLocation)
+					var remarksTd = $("<td></td>").append(item.remarks);
+					var shipBridgeTd = $("<td></td>").append(item.shipBridge);
+					var tallyManTd = $("<td></td>").append(item.tallyMan);
+					/* var createTimeTd = $("<td></td>").append(item.createTime); */
 					/**
 					<button class="btn btn-primary btn-sm">
 											<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
@@ -222,21 +335,24 @@
 					var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
 									.append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("编辑");
 					//为编辑按钮添加一个自定义的属性，来表示当前员工id
-					editBtn.attr("edit-id",item.courseId);
+					editBtn.attr("edit-id",item.id);
 					var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
 									.append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
 					//为编辑按钮添加一个自定义的属性，来表示当前要删除的员工id
-					delBtn.attr("del-id",item.courseId);
+					delBtn.attr("del-id",item.id);
 					var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
 					//append方法执行完成以后还是返回原来的元素
 					$("<tr></tr>").append(checkBoxTd)
-						.append(courseIdTd)
-						.append(courseNameTd)
-						.append(courseTypeTd)
-						.append(courseCreditTd)
-						.append(weeklyTimesTd)
-						.append(weekTd)
-						.append(timeTd)
+						.append(idTd)
+						.append(identifyBoxNumberTd)
+						.append(actualBoxNumberTd)
+						.append(identifyVehicleNumberTd)
+						.append(actualVehicleNumberTd)
+						.append(identifyLocationTd)
+						.append(actualLocationTd)
+						.append(remarksTd)
+						.append(shipBridgeTd)
+						.append(tallyManTd)
 						.append(btnTd)
 						.appendTo("#emps_tables");
 				});
@@ -317,14 +433,14 @@
 				//清除表单数据（表单重置）
 				$("#empAddModal form")[0].reset();//jquerry没有reset方法，reset()是DOM对象的
 				//发送ajax请求，查出部门信息，显示在下拉列表中
-				getDepts("#empAddModal select");
+				/* getDepts("#empAddModal select"); */
 				//弹出模态框
 				$("#empAddModal").modal({
 					backdrop:"static"
 				});
 			});
 			//查出所有部门信息并显示在下拉列表中
-			function getDepts(ele){
+			/* function getDepts(ele){
 				//清空之前下拉列表的值
 				$(ele).empty();
 				$.ajax({
@@ -344,33 +460,24 @@
 					}
 					
 				});
-			}
-			//校验表单数据
-			function validate_add_form(){
-				//1、拿到校验的数据，使用正则表达式
-				var empName = $("#empName_add_input").val();
-				var regName = /(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFF]{2,5})/;
-				if(!regName.test(empName)){
-					//alert("用户名可以是2-5位中文或者6-16位英文和数字的组合");
-					//应该清空这个元素之前的样式
-					show_validate_msg("#empName_add_input","error","用户名可以是2-5位中文或者6-16位英文和数字的组合");
-					return false;
-				}else{
-					show_validate_msg("#empName_add_input","success","")
-				};
-				//2、校验邮箱信息
-				var email = $("#email_add_input").val();
-				var regEmail = /^([a-zA-Z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$/;
-				if(!regEmail.test(email)){
-					//alert("邮箱格式不正确");
-					//应该清空这个元素之前的样式
-					show_validate_msg("#email_add_input","error","邮箱格式不正确");
-					return false;
-				}else{
-					show_validate_msg("#email_add_input","success","");
-				}
-				return true;
-			}
+			} */
+			
+			
+			  //校验表单数据
+		    function validate_add_form(){
+		        //1、拿到要校验的数据
+		        var tallyMan = $("#tallyMan_add_input").val();
+		        var regName = /(^[a-zA-Z0-9_-]{4,16}$)|(^[\u2E80-\u9FFF]{2,5})/;
+		        if (!regName.test(tallyMan)) {
+		            // alert("用户名为2-5中文或1-16英文数字组合");
+		            show_validate_msg("#tallyMan_add_input","error","用户名为2-5中文或4-16英文数字组合");
+		            return false;
+		        }else {
+		            show_validate_msg("#tallyMan_add_input","success","");
+		        }
+		        return true;
+		    }
+		
 			//显示校验结果的提示信息
 			function show_validate_msg(ele,status,msg){
 				//清除当前元素的校验状态
@@ -385,19 +492,19 @@
 				}
 			}
 			
-			$("#empName_add_input").change(function(){
+			$("#tallyMan_add_input").change(function(){
 				//发送ajax请求校验用户是否可用
-				var empName = this.value;
+				var tallyMan = this.value;
 				$.ajax({
 					url:"${APP_PATH}/checkuser",
-					data:"empName="+empName,
+					data:"tallyMan="+tallyMan,
 					type:"POST",
 					success:function(result){
 						if(result.code==100){
-							show_validate_msg("#empName_add_input","success","用户名可用");
+							show_validate_msg("#tallyMan_add_input","success","用户名可用");
 							$("#emp_save_btn").attr("ajax-va","success");
 						}else{
-							show_validate_msg("#empName_add_input","error",result.extend.va_msg);
+							show_validate_msg("#tallyMan_add_input","error",result.extend.va_msg);
 							$("#emp_save_btn").attr("ajax-va","error");
 						}
 					}
@@ -406,19 +513,8 @@
 			});
 			//点击保存，保存员工
 			$("#emp_save_btn").click(function(){
-				//1、模态框中填写的表单数据提交给服务器进行保存
-				//1、先要对提交给服务器的数据进行校对
-				if(!validate_add_form()){
-					return false;
-				} 
-				//1、判断之前的ajax用户名校验是否成功
-		        if ($(this).attr("ajax-va")=="error"){
-		            // console.log("用户名判断校验错误");
-		            return false;
-		        }
-				//2、发送ajax请求保存员工
 				$.ajax({
-					url:"${APP_PATH}/emp",
+					url:"${APP_PATH}/dischargeErrorRecord",
 					type:"POST",
 					data:$("#empAddModal form").serialize(),
 					success:function(result){
@@ -432,19 +528,19 @@
 							to_page(totalRecord);
 						}else{
 							//显示失败信息
-							//console.log(result);
+							console.log(result);
 							//有哪个错误信息就显示哪个字段的
 							//errorFields里面没有定义就是没有出错了
-							if (undefined != result.extend.errorFields.emial){
+							/* if (undefined != result.extend.errorFields.emial){
 			                   //员工邮箱不是未定义，就显示邮箱的错误信息
 			                       show_validate_msg("#email_add_input","error",result.extend.errorFields.emial);
-			                 }
-			                if (undefined != result.extend.errorFields.empName){
+			                 }*/
+			                if (undefined != result.extend.errorFields.tallyMan){
 			                     //显示邮箱的错误信息
-			                       show_validate_msg("#empName_add_input","error",result.extend.errorFields.empName);
-			                 } 
+			                       show_validate_msg("#tallyMan_add_input","error",result.extend.errorFields.tallyMan);
+			                 }
 			                   /* alert(result.extend.errorFields.emial);
-			                   alert(result.extend.errorFields.empName); */
+			                   alert(result.extend.errorFields.empName);  */
 						}
 					}
 				}); 
@@ -456,50 +552,47 @@
 		    //jquery新版没有live，使用on方法进行替代
 			$(document).on("click",".edit_btn",function () {
 	        	//alert("edit");
-				//1、查出部门信息，显示部门列表
-		        getDepts("#empUpdateModal select");
+				/* //1、查出部门信息，显示部门列表
+		        getDepts("#empUpdateModal select"); */
 		        //2、查出员工信息，显示员工信息
-		        getEmp($(this).attr("edit-id"));
+		        getDischargeErrorRecord($(this).attr("edit-id"));
 		        //3、把员工的id传递给模态框的更新按钮
 		        $("#emp_update_btn").attr("edit-id",$(this).attr("edit-id"));
 		        $("#empUpdateModal").modal({
 		            backdrop:"static"
 		        });
 	        });
-		    function getEmp(id) {
+		    function getDischargeErrorRecord(id) {
 		        $.ajax({
-		            url:"${APP_PATH}/emp/"+id,
+		            url:"${APP_PATH}/dischargeErrorRecord/"+id,
 		            type:"GET",
 		            success:function (result) {
 		                //console.log(result);
-		                var empData = result.extend.emp;
-		                $("#empName_update_static").text(empData.empName);
-		                $("#email_update_input").val(empData.emial);
-		                $("#empUpdateModal input[name=gender]").val([empData.gender]);
-		                $("#empUpdateModal select").val([empData.dId]);
+		                var Data = result.extend.dischargeErrorRecord;
+		                $("#identifyBoxNumber_update_input").val(Data.identifyBoxNumber);
+		                $("#actualBoxNumber_update_input").val(Data.actualBoxNumber);
+		                $("#identifyVehicleNumber_update_input").val(Data.identifyVehicleNumber);
+		                $("#actualVehicleNumber_update_input").val(Data.actualVehicleNumber);
+		                $("#identifyLocation_update_input").val(Data.identifyLocation);
+		                $("#actualLocation_update_input").val(Data.actualLocation);
+		                $("#remarks_update_input").val(Data.remarks);
+		                $("#shipBridge_update_input").val(Data.shipBridge);
+		                $("#tallyMan_update_input").val(Data.tallyMan);
+		                
+		                
 		            }
 		        });
 		    }
-		    //点击更新，更新员工信息
+		    //点击更新，更新信息
 		    $("#emp_update_btn").click(function () {
-		        //验证邮箱是否合法
-		        //1、校验邮箱信息
-		        var email = $("#email_update_input").val();
-		        ///^([a-zA-Z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$/;
-		        var regEmail = /^([a-zA-Z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-		        if (!regEmail.test(email)) {
-		            show_validate_msg("#email_update_input","error","邮箱格式错误");
-		            return false;
-		        }else{
-		            show_validate_msg("#email_update_input","success","");
-		        }
-		        //2、发送ajax请求，保存更新员工信息
+
+		        //发送ajax请求，保存更新信息
 		        $.ajax({
-		            url:"${APP_PATH}/emp/"+$(this).attr("edit-id"),
+		            url:"${APP_PATH}/dischargeErrorRecord/"+$(this).attr("edit-id"),
 		            type:"PUT",
 		            data:$("#empUpdateModal form").serialize(),
 		            success:function(result) {
-		                //alert(result.msg);
+		                alert(result.msg);
 		                $("#empUpdateModal").modal("hide");
 		                to_page(currentPage);
 		            }
@@ -508,12 +601,13 @@
 		    //单个删除
 		    $(document).on("click",".delete_btn",function () {
 		       //1、弹出确认删除对话框
-		        var empName = $(this).parents("tr").find("td:eq(2)").text();
+		        var tallyMan = $(this).parents("tr").find("td:eq(10)").text();
+		       
 		        var empId = $(this).attr("del-id");
-		        if(confirm("确认删除【"+empName+"】吗？")){
+		        if(confirm("确认删除【"+tallyMan+"】吗？")){
 		            //确认，发送ajax请求删除
 		            $.ajax({
-		                url:"${APP_PATH}/emp/"+empId,
+		                url:"${APP_PATH}/dischargeErrorRecord/"+empId,
 		                type:"DELETE",
 		                success:function (result) {
 		                    alert(result.msg);
@@ -537,22 +631,22 @@
 		    
 		    //点击全部删除，就批量删除
 		    $("#emp_delete_all_btn").click(function () {
-		        var empNames = "";
+		        var tallyMans = "";
 		        var del_idstr = "";
 		        $.each($(".check_item:checked"),function () {
 		            //组装员工字符串
-		            empNames += $(this).parents("tr").find("td:eq(2)").text()+",";
+		            tallyMans += $(this).parents("tr").find("td:eq(10)").text()+",";
 		            //组织员工id字符串
 		            del_idstr += $(this).parents("tr").find("td:eq(1)").text()+"-";
 		        });
-		        //去除empnames多余的","（最后一个）
-		        empNames = empNames.substring(0,empNames.length-1);
+		        //去除tallyMans多余的","（最后一个）
+		        tallyMans = tallyMans.substring(0,tallyMans.length-1);
 		        //去除员工删除id多余的-
 		        del_idstr = del_idstr.substring(0,del_idstr.length-1);
-		        if (confirm("确认删除【" + empNames + "】吗？")) {
+		        if (confirm("确认删除【" + tallyMans + "】吗？")) {
 		            //发送ajax请求
 		            $.ajax({
-		                url:"${APP_PATH}/emp/"+del_idstr,
+		                url:"${APP_PATH}/dischargeErrorRecord/"+del_idstr,
 		                type:"DELETE",
 		                success:function (result) {
 		                    alert(result.msg);

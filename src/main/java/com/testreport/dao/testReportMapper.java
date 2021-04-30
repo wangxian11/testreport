@@ -1,30 +1,34 @@
 package com.testreport.dao;
 
-import com.testreport.bean.testReport;
-import com.testreport.bean.testReportExample;
+import com.testreport.bean.TestReport;
+import com.testreport.bean.TestReportExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface testReportMapper {
-    long countByExample(testReportExample example);
+public interface TestReportMapper {
+    long countByExample(TestReportExample example);
 
-    int deleteByExample(testReportExample example);
+    int deleteByExample(TestReportExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(testReport record);
+    int insert(TestReport record);
 
-    int insertSelective(testReport record);
+    int insertSelective(TestReport record);
 
-    List<testReport> selectByExample(testReportExample example);
+    List<TestReport> selectByExample(TestReportExample example);
 
-    testReport selectByPrimaryKey(Integer id);
+    TestReport selectByPrimaryKey(Integer id);
+    
+    int fresh1();
+    int fresh2();
+    int fresh3();
 
-    int updateByExampleSelective(@Param("record") testReport record, @Param("example") testReportExample example);
+    int updateByExampleSelective(@Param("record") TestReport record, @Param("example") TestReportExample example);
 
-    int updateByExample(@Param("record") testReport record, @Param("example") testReportExample example);
+    int updateByExample(@Param("record") TestReport record, @Param("example") TestReportExample example);
 
-    int updateByPrimaryKeySelective(testReport record);
+    int updateByPrimaryKeySelective(TestReport record);
 
-    int updateByPrimaryKey(testReport record);
+    int updateByPrimaryKey(TestReport record);
 }

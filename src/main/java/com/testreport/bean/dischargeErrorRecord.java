@@ -2,7 +2,9 @@ package com.testreport.bean;
 
 import java.util.Date;
 
-public class dischargeErrorRecord {
+import javax.validation.constraints.Pattern;
+
+public class DischargeErrorRecord {
     private Integer id;
 
     private String identifyBoxNumber;
@@ -21,6 +23,8 @@ public class dischargeErrorRecord {
 
     private String shipBridge;
 
+    @Pattern(regexp = "(^[a-zA-Z0-9_-]{4,16}$)|(^[\\u2E80-\\u9FFF]{2,5})",
+            message = "jsr303用户名为2-5中文或4-16英文数字组合")
     private String tallyMan;
 
     private Date createTime;

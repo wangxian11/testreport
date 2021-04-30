@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>
+		System
+	</title>
+	<style>
+		.sidebar{ 
+			background:#333645;
+			width:200px;
+			position:absolute;  
+			left:0;  
+			top:0;  
+			height:100%;
+			
+			overflow:auto; 
+			transition:all  0.2s ease 0s;
+		}
+		.main{
+		 	overflow:hidden;  
+		 	position:absolute;  
+		 	left:200px;  
+		 	right:0;  
+		 	height:100%; 
+		 	
+		 	transition:all 0.2s ease 0s;
+/* 		 	background:#3283AC url(./image/background.jpg) no-repeat center;
+ */		 	/* background-repeat:repeat-x; */
+		 	/* min-width:1000px */;
+		}
+		.main .cr{
+			overflow:hidden;  
+		 	position:absolute;  
+		 	left:0px;  
+		 	right:0;  
+		 	height:100%; 
+		 	z-index:1;
+		 	transition:all 0.2s ease 0s;
+			background:#3283AC url(./images/background.jpg) no-repeat center;
+		} 
+		 .big-page .sidebar{ 
+			left:-160px;
+		 }
+		 .big-page .main{ 
+			left:0px;
+		 }
+		 .big-page .main .cr{ 
+			left:40px;
+		 }
+	</style>
+	
+	<script type="text/javascript" src="./static/js/jquery-3.4.1.min.js"></script>
+	<link href="./static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="./static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+ 
+<body>
+
+	<div class="sidebar">
+
+		<!-- 侧边栏标签页 -->
+		<ul class="nav nav-pills nav-stacked" style="padding-top:130px">
+			<!-- 侧边栏选项 -->
+			<li role="presentation" class="active">
+				<!-- 选项控制data-target对应的显隐 -->
+				<a href="#" data-toggle="collapse" data-target="#list1">
+				基本测试情况
+				
+					<button type="button" id="hd" class="btn btn-default" aria-label="Left Align" style="float:right;margin-top:-6px;margin-right:-12px">
+		  				<span id="changeClass" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					</button>
+				
+				</a>
+				<!-- 隐藏的详细菜单 -->	
+				<ul id="list1" class="collapse in">
+					<li class="active">
+						<a href="loading.html">
+							录入
+						</a>
+					</li>
+					<li><a href="shore_bridge.html">查询</a></li>
+				</ul>
+			</li>
+			
+			<li role="presentation" class="active">
+				<a href="#" data-toggle="collapse" data-target="#list2">
+					详细测试信息
+					<button type="button" id="hd" class="btn btn-default" aria-label="Left Align" style="float:right;margin-top:-6px;margin-right:-12px">
+		  				<span id="changeClass" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					</button>
+				</a>
+				<ul id="list2" class="collapse in">
+					<li class="active">
+						<a href="loading_search.html">装船识别记录查询</a>
+					</li>
+					<li class="active"><a href="discharge_search.html">卸船识别记录查询</a></li>
+					<!-- <li class="active"><a href="loading_details.html">装船识别错误信息</a></li>
+					<li class="active"><a href="discharge_details.html">卸船识别错误信息</a></li> -->
+					
+					<li class="active"><a href="dischargeErrorRecordList">卸船识别错误信息列表</a></li>
+					<li class="active"><a href="loadErrorRecordList">装船识别错误信息列表</a></li>
+					<li class="active"><a href="reportRecordList">基本信息列表</a></li>
+					
+				</ul>
+			</li>
+			
+			<li role="presentation" class="active">
+				<a href="#" data-toggle="collapse" data-target="#list3">
+					统计中心
+					<button type="button" id="hd" class="btn btn-default" aria-label="Left Align" style="float:right;margin-top:-6px;margin-right:-12px">
+		  				<span id="changeClass" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					</button>
+				</a>
+				<ul id="list3" class="collapse in">
+					<li class="active">
+						<a href="yesterday_basic_statistics.jsp">
+							昨天的数据初步统计
+						</a>
+					</li>
+					<li class="active">
+						<a href="today_basic_statistics.jsp">
+							今天的数据初步统计
+						</a>
+					</li>
+					<li class="active">
+						<a href="last_seven_days.jsp">
+							近七天的数据初步统计
+						</a>
+					</li>
+					<li><a href="#">统计详情</a></li>
+				</ul>
+			</li>
+			
+			<li role="presentation" class="active">
+				<a href="#" data-toggle="collapse" data-target="#list4">
+					个人中心
+					<button type="button" id="hd" class="btn btn-default" aria-label="Left Align" style="float:right;margin-top:-6px;margin-right:-12px">
+		  				<span id="changeClass" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					</button>
+				</a>
+				<ul id="list4" class="collapse in">
+					<li class="active">
+						<a href="#">
+							账户信息
+						</a>
+					</li>
+					<li><a href="#">密码修改</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	
+	<div class="main">
+		<div  style="padding-top:10px" >
+			<button type="button" id="navbar-letf" class="btn btn-default" aria-label="Left Align">
+		  		<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+			</button>
+			
+			<button type="button" class="btn btn-default" aria-label="Left Align" style="float:right">
+		  		<span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+			</button>
+			
+			<button type="button" class="btn btn-default" aria-label="Left Align" style="float:right">
+		  		<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" style="float:right">
+		  		<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" style="float:right">
+		  		<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align" style="float:right">
+		  		<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+			</button>
+			
+			<button type="button" class="btn btn-default" aria-label="Left Align" style="float:right">
+		  		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			</button>
+		
+			<button type="button" class="btn btn-default" aria-label="Left Align" style="float:right">
+		  		<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			</button>
+		</div>
+	<hr style="border:solid 3px #eee;margin-top:10px">
+	<div class="cr"></div>
+		
+
+	</div>
+	<div class="navbar navbar-default navbar-fixed-bottom" style="position:absolute;">
+		<div align="center">
+			<footer class="modal-footer" style="width:100%;overflow:hidden;position:absolute;">
+			   <div class="container">
+			    <div class="row footer-top" style="text-align:center;">
+			     <h1></h1>
+			    </div>
+			    <hr style="border:1px  solid #000000;">
+			    <div class="row" style="text-align:center;">
+			     <div class="col-sm-3 col-md-3 col-lg-3">
+			     	<a href="#" style="color:gray;">关于我们</a>
+			      </div>
+			      <div class="col-sm-3 col-md-3 col-lg-3">
+			     	<a href="#" style="color:gray;">联系方式</a>
+			      </div>
+			      <div class="col-sm-3 col-md-3 col-lg-3">
+			     
+			     	<a href="#" style="color:gray;" data-toggle="item" data-target="#footerlist">
+						相关网站
+					</a>
+					<ul id="footerlist" class="item in">
+						<li class="active"><a href="http://www.gztally.com">广州外轮理货有限公司</a></li>
+						<li><a href="http://www.gztally.com/product_29_0.html">公司党建</a></li>
+						<li><a href="http://www.gztally.com/about_38_0.html">理货业务</a></li>
+					</ul>
+			     	
+			      </div>
+			      <div class="col-sm-3 col-md-3 col-lg-3">
+			     	<a href="#" style="color:gray;">特别致谢</a>
+			      </div>
+			     </div>
+			    </div>
+	  		</footer>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	// 切换侧边栏
+	$(function(){
+	     // 切换侧边栏
+	     $("#navbar-letf").click(toggleSidebar);
+	     
+	     
+	 	 $("[id=hd]").click(function(){
+	 	     /* alert($("#changeClass").attr('class')); */
+	 	 	if($("#changeClass").attr('class')=="glyphicon glyphicon-chevron-right")
+	 	 	$("[id=changeClass]").attr("class","glyphicon glyphicon-chevron-left");
+	 	 	else
+	 	 		$("[id=changeClass]").attr("class","glyphicon glyphicon-chevron-right");
+	 	     });
+	 	 
+	 	 
+	 	 
+	 	 
+	 	 
+	 	});
+	
+	
+	 
+	//切换侧边栏显示隐藏
+	function  toggleSidebar(){
+	     $("body").toggleClass("big-page");
+	     
+	     $("[id=hd]").toggle();
+	     /* $("[id=changeClass]").toggle(); */
+	     
+	     
+	     return  false ;
+	}
+	</script>
+</body>
+ 
+</html>

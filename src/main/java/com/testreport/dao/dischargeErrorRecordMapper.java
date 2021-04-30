@@ -1,30 +1,34 @@
 package com.testreport.dao;
 
-import com.testreport.bean.dischargeErrorRecord;
-import com.testreport.bean.dischargeErrorRecordExample;
+import com.testreport.bean.DischargeErrorRecord;
+import com.testreport.bean.DischargeErrorRecordExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface dischargeErrorRecordMapper {
-    long countByExample(dischargeErrorRecordExample example);
+public interface DischargeErrorRecordMapper {
+    long countByExample(DischargeErrorRecordExample example);
 
-    int deleteByExample(dischargeErrorRecordExample example);
+    int deleteByExample(DischargeErrorRecordExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(dischargeErrorRecord record);
+    int insert(DischargeErrorRecord record);
 
-    int insertSelective(dischargeErrorRecord record);
+    int insertSelective(DischargeErrorRecord record);
 
-    List<dischargeErrorRecord> selectByExample(dischargeErrorRecordExample example);
+    List<DischargeErrorRecord> selectByExample(DischargeErrorRecordExample example);
 
-    dischargeErrorRecord selectByPrimaryKey(Integer id);
+    DischargeErrorRecord selectByPrimaryKey(Integer id);
+    
+    int fresh1();
+    int fresh2();
+    int fresh3();
 
-    int updateByExampleSelective(@Param("record") dischargeErrorRecord record, @Param("example") dischargeErrorRecordExample example);
+    int updateByExampleSelective(@Param("record") DischargeErrorRecord record, @Param("example") DischargeErrorRecordExample example);
 
-    int updateByExample(@Param("record") dischargeErrorRecord record, @Param("example") dischargeErrorRecordExample example);
+    int updateByExample(@Param("record") DischargeErrorRecord record, @Param("example") DischargeErrorRecordExample example);
 
-    int updateByPrimaryKeySelective(dischargeErrorRecord record);
+    int updateByPrimaryKeySelective(DischargeErrorRecord record);
 
-    int updateByPrimaryKey(dischargeErrorRecord record);
+    int updateByPrimaryKey(DischargeErrorRecord record);
 }

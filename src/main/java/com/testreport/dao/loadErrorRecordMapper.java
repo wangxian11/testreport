@@ -1,30 +1,34 @@
 package com.testreport.dao;
 
-import com.testreport.bean.loadErrorRecord;
-import com.testreport.bean.loadErrorRecordExample;
+import com.testreport.bean.LoadErrorRecord;
+import com.testreport.bean.LoadErrorRecordExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface loadErrorRecordMapper {
-    long countByExample(loadErrorRecordExample example);
+public interface LoadErrorRecordMapper {
+    long countByExample(LoadErrorRecordExample example);
 
-    int deleteByExample(loadErrorRecordExample example);
+    int deleteByExample(LoadErrorRecordExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(loadErrorRecord record);
+    int insert(LoadErrorRecord record);
 
-    int insertSelective(loadErrorRecord record);
+    int insertSelective(LoadErrorRecord record);
 
-    List<loadErrorRecord> selectByExample(loadErrorRecordExample example);
+    List<LoadErrorRecord> selectByExample(LoadErrorRecordExample example);
 
-    loadErrorRecord selectByPrimaryKey(Integer id);
+    LoadErrorRecord selectByPrimaryKey(Integer id);
+    
+    int fresh1();
+    int fresh2();
+    int fresh3();
 
-    int updateByExampleSelective(@Param("record") loadErrorRecord record, @Param("example") loadErrorRecordExample example);
+    int updateByExampleSelective(@Param("record") LoadErrorRecord record, @Param("example") LoadErrorRecordExample example);
 
-    int updateByExample(@Param("record") loadErrorRecord record, @Param("example") loadErrorRecordExample example);
+    int updateByExample(@Param("record") LoadErrorRecord record, @Param("example") LoadErrorRecordExample example);
 
-    int updateByPrimaryKeySelective(loadErrorRecord record);
+    int updateByPrimaryKeySelective(LoadErrorRecord record);
 
-    int updateByPrimaryKey(loadErrorRecord record);
+    int updateByPrimaryKey(LoadErrorRecord record);
 }

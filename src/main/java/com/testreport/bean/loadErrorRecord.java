@@ -2,7 +2,7 @@ package com.testreport.bean;
 
 import java.util.Date;
 
-public class loadErrorRecord {
+public class LoadErrorRecord {
     private Integer id;
 
     private String identifyBoxNumber;

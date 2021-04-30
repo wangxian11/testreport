@@ -3,56 +3,62 @@ package com.testreport.bean;
 import java.util.HashMap;
 import java.util.Map;
 
+
 /**
- * Í¨ÓÃµÄ·µ»ØµÄÀà
+ * é€šç”¨çš„è¿”å›ç±»
  * @author Administrator
  *
  */
 public class Msg {
 	
-	//×´Ì¬Âë 100-³É¹¦  200-Ê§°Ü
-	private int code;
-	//ÌáÊ¾ĞÅÏ¢
-	private String msg;
-	//ÓÃ»§Òª·µ»Ø¸øä¯ÀÀÆ÷µÄÊı¾İ
-	private Map<String, Object> extend = new HashMap<String, Object>();
-	
-	public static Msg sucess() {
-		Msg result = new Msg();
-		result.setCode(100);
-		result.setMsg("´¦Àí³É¹¦£¡");
-		return result;
-	}
-	
-	public static Msg fail() {
-		Msg result = new Msg();
-		result.setCode(200);
-		result.setMsg("´¦ÀíÊ§°Ü£¡");
-		return result;
-	}
-	
-	public Msg add(String key, Object value) {
-		this.getExtend().put(key, value);
-		return this;
-	}
-	
-	public int getCode() {
-		return code;
-	}
-	public void setCode(int code) {
-		this.code = code;
-	}
-	public String getMsg() {
-		return msg;
-	}
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
-	public Map<String, Object> getExtend() {
-		return extend;
-	}
-	public void setExtend(Map<String, Object> extend) {
-		this.extend = extend;
-	}
+	//çŠ¶æ€ç   100-æˆåŠŸ  200-å¤±è´¥
+    private int code;
+    //æç¤ºä¿¡æ¯
+    private String msg;
+    //ç”¨æˆ·è¿”å›ç»™æµè§ˆå™¨çš„æ•°æ®
+    private Map<String,Object> extend = new HashMap<String, Object>();
+
+    public static Msg success(){
+        Msg result = new Msg();
+        result.setCode(100);;
+        result.setMsg("å¤„ç†æˆåŠŸï¼");
+        return result;
+    }
+    public static Msg fail(){
+        Msg result = new Msg();
+        result.setCode(200);;
+        result.setMsg("å¤„ç†å¤±è´¥ï¼");
+        return result;
+    }
+
+    public Msg add(String key,Object value){
+        this.getExtend().put(key,value);
+        return this;
+    }
+
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public Map<String, Object> getExtend() {
+        return extend;
+    }
+
+    public void setExtend(Map<String, Object> extend) {
+        this.extend = extend;
+    }
 	
 }

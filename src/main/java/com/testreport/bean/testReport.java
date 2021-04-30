@@ -2,7 +2,7 @@ package com.testreport.bean;
 
 import java.util.Date;
 
-public class testReport {
+public class TestReport {
     private Integer id;
 
     private String testDate;
